@@ -20,8 +20,9 @@ The value of C that gave the best performance in terms of average log-loss over 
 
 ![Screen Shot 2021-08-27 at 3 02 32 pm](https://user-images.githubusercontent.com/43845085/131074455-9de578d3-2b2b-4b3e-be7e-2dc65aa5a504.png)
 
-## Part 2 - NonParametric Bootstrap Implementation for Confidence Intervals (from scratch)
-The intervals constructed shown below tell us that most of the coefficients in the model are plausibly zero. It is therefore a good idea to regularize the logistic regression fit. We would likely need a value of C ≪ 1 to get a model that is sparse and doesn’t include many of the noisy features.
+## Part 2 - NonParametric 90% Bootstrap Confidence Interval Implementation (from scratch)
+A 90% confidence interval gives us a range of values for which we believe with 90% probability that the true parameter is contained in that interval. If the computed 90% confidence interval contains the value zero, then this suggests to us that the feature should not be included in our model. 
 
 ![Screen Shot 2021-08-27 at 3 07 02 pm](https://user-images.githubusercontent.com/43845085/131074812-dfa6c7a8-6427-44e0-98b5-93fad13512db.png)
 
+The intervals constructed shown above tell us that most of the coefficients in the model are plausibly zero (indicated by the red lines). It is therefore a good idea to regularize the logistic regression fit. We would likely need a value of C << 1 to get a model that is sparse and doesn’t include many of the noisy features.
